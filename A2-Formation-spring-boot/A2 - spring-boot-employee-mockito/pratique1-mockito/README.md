@@ -22,7 +22,7 @@ https://medium.com/thefreshwrites/junit-and-mockito-in-spring-boot-38dcbf4b132f
 
 3. **Création d'une Entité JPA** : Créez une entité `Employee` en utilisant les annotations Lombok pour réduire le code superflu.
 
-4. **Couche de Répertoire** : Développez un `EmployeeRepository` qui étend l'interface `JpaRepository` pour exploiter les opérations CRUD.
+4. **Couche de Respository** : Développez un `EmployeeRepository` qui étend l'interface `JpaRepository` pour exploiter les opérations CRUD.
 
 5. **Couche de Service** : Implémentez une interface `EmployeeService` avec des méthodes CRUD et une classe `EmployeeServiceImpl` fournissant la logique métier réelle.
 
