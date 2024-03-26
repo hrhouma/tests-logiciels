@@ -127,7 +127,7 @@ public class EmployeeService {
 Ce guide montre comment configurer un projet Spring Boot avec Spring Data JPA pour gérer les données des employés de manière simple et efficace. Grâce à l'abstraction fournie par Spring Data JPA, l'accès et la gestion des données deviennent plus faciles et plus rapides, permettant aux développeurs de se concentrer sur la logique métier de l'application plutôt que sur la gestion de la base de données.
 ******************
 
-
+# ⚠️ 3 - Mécanisme JPA (THÉORIE) + EXEMPLE ⚠️
 
 Ce `README.md` fournit une vue d'ensemble basique de la manière de travailler avec Spring Data JPA dans un projet Spring Boot, y compris des informations sur l'entité `Employee`, le repository `EmployeeRepository`, et un exemple d'utilisation dans un service. Vous pouvez étoffer ce fichier avec plus de détails spécifiques à votre projet, comme les instructions d'installation, de configuration, et d'exécution de l'application.
 *****
@@ -192,6 +192,7 @@ La confusion vient du fait que `JpaRepository` et d'autres interfaces parentes d
 Ces méthodes couvrent les opérations de base nécessaires pour l'accès aux données et la manipulation des entités dans la plupart des applications, ce qui rend le développement plus rapide et plus efficace. Si vous avez besoin de fonctionnalités supplémentaires ou spécifiques qui ne sont pas couvertes par ces méthodes (comme `findByEmail` dans votre cas), vous devez les déclarer explicitement dans votre interface de repository. Spring Data JPA générera alors automatiquement l'implémentation de ces méthodes selon la convention de nommage que vous avez utilisée.
 
 ************
+# ⚠️ 4 - Mécanisme JPA (THÉORIE) + EXEMPLE ⚠️
 Pour votre entité `Employee` dans le package `com.example.mockitodemo.model`, vous pouvez définir plusieurs méthodes personnalisées dans votre interface de repository pour répondre à divers besoins de recherche et de manipulation des données. Voici quelques exemples de méthodes que vous pourriez vouloir déclarer, en fonction des fonctionnalités que vous souhaitez implémenter dans votre application :
 
 ### Rechercher par Nom et Prénom
@@ -260,6 +261,7 @@ Note : Utiliser `Specification` nécessite une compréhension plus approfondie d
 Ces exemples montrent comment étendre votre repository pour inclure des méthodes qui répondent à des besoins spécifiques de votre application, en utilisant les noms de propriétés de votre entité `Employee`. Spring Data JPA rend ces personnalisations simples grâce à sa convention de nommage et à sa capacité à générer automatiquement les requêtes correspondantes. Selon les besoins exacts de votre application, vous pouvez ajouter ou modifier ces méthodes pour effectuer des opérations de données plus ciblées.
 
 ****
+# ⚠️ 5 - Mécanisme JPA (THÉORIE) + EXEMPLE ⚠️
 **JPQL
 Le Java Persistence Query Language (JPQL) est un langage de requête orienté objet utilisé pour effectuer des requêtes dans des applications gérées par JPA, y compris les applications Spring Data JPA. JPQL est conçu pour simplifier la manipulation de données persistantes sans utiliser de requêtes SQL directes, permettant ainsi aux développeurs de travailler directement avec les classes et les instances d'objet Java plutôt qu'avec des tables et des colonnes de base de données.
 
