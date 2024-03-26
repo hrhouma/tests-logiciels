@@ -1,9 +1,15 @@
-# Référence : 
+# Référence 🧑‍🚒
 https://medium.com/thefreshwrites/junit-and-mockito-in-spring-boot-38dcbf4b132f
 
-Spring Boot utilise Spring Data JPA (Java Persistence API) pour simplifier l'accès aux données dans les applications Java. Le mécanisme de repository de Spring Data JPA fournit une abstraction puissante pour accéder aux données, permettant de créer des requêtes de base sans avoir besoin d'écrire du code SQL spécifique. Spring Data JPA gère la plupart des tâches de routine liées à l'accès aux données, comme l'ouverture et la fermeture de la connexion à la base de données, la conversion des résultats des requêtes en objets Java, etc.
+# ⚠️ 1 - Mécanisme JPA (THÉORIE) + EXEMPLE ⚠️
+- Spring Boot utilise Spring Data JPA (Java Persistence API) pour simplifier l'accès aux données dans les applications Java.
+- Le mécanisme de repository de Spring Data JPA fournit une abstraction puissante pour accéder aux données, permettant de créer des requêtes de base sans avoir besoin d'écrire du code SQL spécifique.
+- Spring Data JPA gère la plupart des tâches de routine liées à l'accès aux données, comme l'ouverture et la fermeture de la connexion à la base de données, la conversion des résultats des requêtes en objets Java, etc.
 
-Pour l'exemple de la classe `Employee` que vous avez fourni, on peut créer une interface de repository pour gérer les opérations CRUD (Create, Read, Update, Delete) pour les entités `Employee`. Voici comment cela fonctionne et comment on pourrait implémenter une méthode personnalisée pour rechercher par exemple par le nom de famille :
+## Exemple ✍️
+
+- Pour la classe `Employee`, on peut créer une interface de repository pour gérer les opérations CRUD (Create, Read, Update, Delete) pour les entités `Employee`.
+- Voici comment cela fonctionne et comment on pourrait implémenter une méthode personnalisée pour rechercher par exemple par le nom de famille :
 
 ### Interface Repository
 
@@ -41,8 +47,8 @@ Spring Data JPA prend en charge une grande variété de mots-clés qui peuvent �
 L'utilisation de Spring Data JPA et de ses interfaces de repository rend l'accès aux données plus simple et plus élégant, en suivant les principes convention over configuration de Spring.
 
 ***********
-Bien sûr, voici un exemple de fichier `README.md` pour documenter l'utilisation de Spring Data JPA pour accéder à des entités `Employee` dans une application Spring Boot. Vous pouvez ajuster ce modèle selon les besoins spécifiques de votre projet.
 
+# ⚠️ 2 - RÉSUMÉ + EXEMPLE EN PROFONDEUR Mécanisme JPA (PRATIQUE) ⚠️
 
 # Gestion des Employés avec Spring Boot et Spring Data JPA
 
@@ -119,6 +125,8 @@ public class EmployeeService {
 ## Conclusion
 
 Ce guide montre comment configurer un projet Spring Boot avec Spring Data JPA pour gérer les données des employés de manière simple et efficace. Grâce à l'abstraction fournie par Spring Data JPA, l'accès et la gestion des données deviennent plus faciles et plus rapides, permettant aux développeurs de se concentrer sur la logique métier de l'application plutôt que sur la gestion de la base de données.
+******************
+
 
 
 Ce `README.md` fournit une vue d'ensemble basique de la manière de travailler avec Spring Data JPA dans un projet Spring Boot, y compris des informations sur l'entité `Employee`, le repository `EmployeeRepository`, et un exemple d'utilisation dans un service. Vous pouvez étoffer ce fichier avec plus de détails spécifiques à votre projet, comme les instructions d'installation, de configuration, et d'exécution de l'application.
