@@ -131,6 +131,7 @@ Ce guide montre comment configurer un projet Spring Boot avec Spring Data JPA po
 
 Ce `README.md` fournit une vue d'ensemble basique de la manière de travailler avec Spring Data JPA dans un projet Spring Boot, y compris des informations sur l'entité `Employee`, le repository `EmployeeRepository`, et un exemple d'utilisation dans un service. Vous pouvez étoffer ce fichier avec plus de détails spécifiques à votre projet, comme les instructions d'installation, de configuration, et d'exécution de l'application.
 *****
+# ⚠️ 4 -
 L'erreur que vous avez rencontrée et la solution que vous avez trouvée touchent à un aspect fondamental de Spring Data JPA : la capacité de créer des requêtes de manière déclarative grâce à la convention de nommage dans les interfaces de repository.
 
 Lorsque vous avez tenté d'utiliser la méthode `employeeRepository.findByEmail(employee.getEmail());` sans avoir explicitement déclaré cette méthode dans votre interface `EmployeeRepository`, Spring Data JPA ne pouvait pas résoudre cette méthode car elle ne faisait pas partie des méthodes CRUD générées automatiquement ni n'était définie par vous dans l'interface. Spring Data JPA génère des implémentations de méthode au runtime basées sur les noms des méthodes déclarées dans vos interfaces de repository, en suivant une convention de nommage spécifique qui permet d'interpréter le nom de la méthode comme une requête.
@@ -148,6 +149,7 @@ Lorsque vous avez ajouté la méthode `Optional<Employee> findByEmail(String ema
 Cette approche illustre la flexibilité et la puissance de Spring Data JPA, permettant aux développeurs de construire rapidement des applications robustes et maintenables en réduisant le besoin d'écrire et de maintenir du code boilerplate pour l'accès aux données.
 
 **********
+# ⚠️ 5 -
 Votre observation est tout à fait juste et touche à une nuance importante de la façon dont Spring Data JPA fonctionne et fournit ses fonctionnalités.
 
 ### Pourquoi `findById` est disponible sans déclaration explicite
@@ -165,6 +167,8 @@ En revanche, `findByEmail` est une méthode de recherche basée sur un attribut 
 
 Cette distinction permet à Spring Data JPA d'offrir une grande flexibilité et puissance, vous permettant d'accéder facilement aux opérations de données les plus communes tout en vous donnant la capacité de personnaliser le comportement du repository pour répondre à des besoins spécifiques.
 **********
+# ⚠️ 6 - Pourquoi est-il parfois nécessaire d'ajouter des méthodes personnalisées dans une interface de repository Spring Data JPA, alors que `JpaRepository` et d'autres interfaces parentes comme `CrudRepository` ou `PagingAndSortingRepository` offrent déjà un ensemble de méthodes CRUD de base ?
+
 La confusion vient du fait que `JpaRepository` et d'autres interfaces parentes dans Spring Data JPA, comme `CrudRepository` ou `PagingAndSortingRepository`, fournissent déjà un ensemble de méthodes CRUD de base qui sont communes à toutes les entités. Ces méthodes couvrent les opérations essentielles de manipulation des données, et elles sont automatiquement disponibles dans tous les repositories qui étendent ces interfaces. Voici quelques-unes de ces méthodes et ce qu'elles font :
 
 ### Méthodes fournies par `CrudRepository`
@@ -192,7 +196,7 @@ La confusion vient du fait que `JpaRepository` et d'autres interfaces parentes d
 Ces méthodes couvrent les opérations de base nécessaires pour l'accès aux données et la manipulation des entités dans la plupart des applications, ce qui rend le développement plus rapide et plus efficace. Si vous avez besoin de fonctionnalités supplémentaires ou spécifiques qui ne sont pas couvertes par ces méthodes (comme `findByEmail` dans votre cas), vous devez les déclarer explicitement dans votre interface de repository. Spring Data JPA générera alors automatiquement l'implémentation de ces méthodes selon la convention de nommage que vous avez utilisée.
 
 ************
-# ⚠️ 4 - Mécanisme JPA (THÉORIE) + EXEMPLE ⚠️
+# ⚠️ 7 - Quelles sont les méthodes personnalisées que je peux définir dans mon interface de repository pour l'entité `Employee` afin de réaliser des recherches et manipulations de données efficaces avec Spring Data JPA ? ⚠️
 Pour votre entité `Employee` dans le package `com.example.mockitodemo.model`, vous pouvez définir plusieurs méthodes personnalisées dans votre interface de repository pour répondre à divers besoins de recherche et de manipulation des données. Voici quelques exemples de méthodes que vous pourriez vouloir déclarer, en fonction des fonctionnalités que vous souhaitez implémenter dans votre application :
 
 ### Rechercher par Nom et Prénom
@@ -261,7 +265,7 @@ Note : Utiliser `Specification` nécessite une compréhension plus approfondie d
 Ces exemples montrent comment étendre votre repository pour inclure des méthodes qui répondent à des besoins spécifiques de votre application, en utilisant les noms de propriétés de votre entité `Employee`. Spring Data JPA rend ces personnalisations simples grâce à sa convention de nommage et à sa capacité à générer automatiquement les requêtes correspondantes. Selon les besoins exacts de votre application, vous pouvez ajouter ou modifier ces méthodes pour effectuer des opérations de données plus ciblées.
 
 ****
-# ⚠️ 5 - Mécanisme JPA (THÉORIE) + EXEMPLE ⚠️
+# ⚠️ 5 - JPQL et Spring Data JPA: Créer des Requêtes Complexes Facilement ⚠️
 **JPQL
 Le Java Persistence Query Language (JPQL) est un langage de requête orienté objet utilisé pour effectuer des requêtes dans des applications gérées par JPA, y compris les applications Spring Data JPA. JPQL est conçu pour simplifier la manipulation de données persistantes sans utiliser de requêtes SQL directes, permettant ainsi aux développeurs de travailler directement avec les classes et les instances d'objet Java plutôt qu'avec des tables et des colonnes de base de données.
 
