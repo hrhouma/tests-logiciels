@@ -1,6 +1,28 @@
 # Référence 🧑‍🚒
 https://medium.com/thefreshwrites/junit-and-mockito-in-spring-boot-38dcbf4b132f
 
+# Table des matières
+Je ne peux pas accéder directement au contenu du lien fourni, mais voici un résumé basé sur les informations que vous avez partagées :
+
+1. **Mécanisme JPA (Théorie + Exemple)** : Explique comment Spring Boot utilise Spring Data JPA pour faciliter l'accès aux données, notamment avec le mécanisme de repository pour les opérations CRUD et la possibilité de définir des méthodes de recherche personnalisées sans écrire de SQL directement.
+
+2. **Mécanisme JPA (Pratique)** : Détaille l'utilisation pratique de Spring Boot et Spring Data JPA dans la gestion des données des employés, soulignant l'efficacité des opérations CRUD.
+
+3. **Erreur avec findByEmail** : Discute d'une erreur courante quand une méthode utilisée dans le service n'est pas définie dans le repository, soulignant l'importance de déclarer explicitement les méthodes de requête spécifiques.
+
+4. **Définition explicite des méthodes** : Clarifie que, bien que JpaRepository fournisse des méthodes CRUD de base, les requêtes spécifiques basées sur des attributs uniques doivent être explicitement définies.
+
+5. **Disponibilité de findById vs. findByEmail** : Explique pourquoi certaines méthodes sont disponibles par défaut dans les repositories Spring Data JPA et pourquoi d'autres, comme findByEmail, nécessitent une définition explicite.
+
+6. **Ajout de méthodes personnalisées dans les interfaces de repository** : Aborde la flexibilité de JpaRepository et la nécessité de définir des méthodes personnalisées pour des requêtes spécifiques.
+
+7. **Méthodes de repository personnalisées pour l'entité Employee** : Propose plusieurs méthodes de requête personnalisées pour l'entité Employee afin de gérer efficacement diverses tâches de manipulation et de récupération de données.
+
+8. **JPQL et Spring Data JPA pour des requêtes complexes** : Introduit JPQL comme outil pour créer des requêtes complexes dans les applications Spring Data JPA, mettant en avant ses avantages comme l'indépendance de la base de données et la requête orientée objet.
+
+
+----
+
 # ⚠️ 1 - Mécanisme JPA (THÉORIE) + EXEMPLE ⚠️
 - Spring Boot utilise Spring Data JPA (Java Persistence API) pour simplifier l'accès aux données dans les applications Java.
 - Le mécanisme de repository de Spring Data JPA fournit une abstraction puissante pour accéder aux données, permettant de créer des requêtes de base sans avoir besoin d'écrire du code SQL spécifique.
