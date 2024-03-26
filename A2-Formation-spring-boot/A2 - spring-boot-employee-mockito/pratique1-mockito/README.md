@@ -1,4 +1,7 @@
-Cet article, écrit par Anusha SP et publié sur The Fresh Writes le 7 septembre 2023, explore l'utilisation des frameworks JUnit et Mockito pour le test unitaire d'applications Java, en mettant l'accent sur les API REST dans le contexte de Spring Boot.
+# Référence 🧑‍🚒
+https://medium.com/thefreshwrites/junit-and-mockito-in-spring-boot-38dcbf4b132f
+
+- Cet article, écrit par Anusha SP et publié sur The Fresh Writes le 7 septembre 2023, explore l'utilisation des frameworks JUnit et Mockito pour le test unitaire d'applications Java, en mettant l'accent sur les API REST dans le contexte de Spring Boot.
 
 ### Vue d'ensemble du Test Unitaire
 - **Test Unitaire** : Considéré comme un processus continu dans la méthodologie Agile, le test unitaire vise à vérifier les composants individuels d'une application logicielle pour s'assurer qu'ils fonctionnent correctement. L'objectif principal est de valider que chaque partie du code logiciel fonctionne comme prévu.
