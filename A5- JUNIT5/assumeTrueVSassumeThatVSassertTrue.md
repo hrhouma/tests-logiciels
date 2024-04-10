@@ -70,3 +70,29 @@ Dans cet exemple, `assumeThat(getJavaVersion(), is(greaterThanOrEqualTo(11)));` 
 - **Clarté** : Rend les tests plus lisibles et explicites quant à leurs exigences environnementales ou préalables.
 
 Ainsi, `assumeThat` est un outil puissant pour contrôler l'exécution des tests en fonction de conditions spécifiques, sans pour autant échouer les tests quand les conditions ne sont pas remplies. Cela aide à maintenir la suite de tests propre et focalisée sur les scénarios pertinents.
+
+
+# Mais c'est quoi la différence entre `assumeTrue` et `assumeThat` ?
+
+La principale différence entre `assumeThat` et `assumeTrue` réside dans leur flexibilité et la manière dont ils expriment les conditions préalables à l'exécution d'un test. Tous deux sont utilisés pour vérifier si certaines conditions sont remplies avant de poursuivre l'exécution d'un test, mais ils le font de manière légèrement différente.
+
+### `assumeTrue`
+
+- **Utilisation**: `assumeTrue` est utilisé pour vérifier une condition booléenne simple. Si la condition est `true`, le test continue; si elle est `false`, le test est ignoré.
+- **Exemple**: `assumeTrue(x > 5)` vérifie si `x` est supérieur à 5. Si `x` est 6, le test continue. Si `x` est 4, le test est ignoré.
+- **Flexibilité**: Moins flexible car il se limite à des vérifications booléennes simples.
+
+### `assumeThat`
+
+- **Utilisation**: `assumeThat` est plus flexible et permet d'utiliser des "matchers" pour exprimer des conditions plus complexes et des assertions plus descriptives. Il peut vérifier si une condition complexe est satisfaite, et si ce n'est pas le cas, le test est ignoré.
+- **Exemple**: `assumeThat(x, is(greaterThan(5)))` utilise un matcher pour vérifier si `x` est supérieur à 5 de manière plus expressive. Cela permet non seulement de vérifier si `x` est supérieur à 5, mais aussi d'intégrer facilement d'autres vérifications complexes ou spécifiques.
+- **Flexibilité**: Plus flexible car il permet d'exprimer une large gamme de conditions à l'aide de matchers, rendant les intentions derrière les vérifications préalables plus claires et plus expressives.
+
+### Conclusion
+
+La différence clé entre `assumeTrue` et `assumeThat` réside donc dans leur niveau de flexibilité et d'expressivité :
+
+- `assumeTrue` est simple et direct, utilisé pour des vérifications booléennes basiques.
+- `assumeThat` offre une flexibilité et une expressivité accrues grâce à l'utilisation de matchers, permettant des vérifications plus complexes et des conditions préalables plus descriptives.
+
+**`assumeThat`** est donc plus puissant et flexible pour écrire des conditions préalables complexes ou lorsque vous voulez que les vérifications préalables dans vos tests soient plus lisibles et expressives. **`assumeTrue`**, en revanche, est préférable pour des conditions simples et directes. Les deux méthodes visent à améliorer la pertinence des tests en s'assurant qu'ils ne s'exécutent que lorsque leurs conditions préalables spécifiques sont satisfaites, sans pour autant échouer si ces conditions ne le sont pas.
