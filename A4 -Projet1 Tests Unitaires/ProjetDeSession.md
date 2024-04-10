@@ -1,4 +1,4 @@
-# Énoncé du Projet de Session : Exploration et Application de JUnit 5**
+# Énoncé du Projet de Session : Exploration et Application de JUnit 5
 
 Dans le cadre de ce projet de session, vous êtes invités à approfondir vos connaissances et votre maîtrise de JUnit 5, un framework de test unitaire de premier plan pour le langage de programmation Java. Vous avez le choix entre trois projets distincts, chacun conçu pour renforcer votre compréhension et votre capacité à appliquer JUnit 5 dans différents contextes de développement logiciel. Sélectionnez le projet qui vous interpelle le plus ou qui complémente le mieux vos travaux en cours dans d'autres cours.
 
