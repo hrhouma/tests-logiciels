@@ -7,7 +7,7 @@ https://drive.google.com/drive/folders/1PxIzi3MsCEZ-raf0zEOjSHQn_Fb88ftK?usp=sha
 # lien 3 : 
 https://drive.google.com/drive/folders/1KUU1Xo2NihxGNOSxv9_MFhdQhKesVisv?usp=sharing
 
-# Énoncé du Laboratoire: Gestion des Utilisateurs avec JDBC et JUnit**
+# Énoncé du Laboratoire: Gestion des Utilisateurs avec JDBC et JUnit
 
 **Objectif du Laboratoire:** Ce laboratoire vise à renforcer vos compétences en Java, spécifiquement dans la manipulation de bases de données avec JDBC (Java Database Connectivity) et le développement dirigé par les tests (TDD) avec JUnit. Les étudiants seront chargés de développer, tester et améliorer une application de gestion des utilisateurs.
 
