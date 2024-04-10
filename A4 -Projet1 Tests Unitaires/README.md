@@ -42,6 +42,6 @@ https://drive.google.com/drive/folders/1KUU1Xo2NihxGNOSxv9_MFhdQhKesVisv?usp=sha
 **Livraison:**
 Votre projet final doit être soumis sous forme d'archive contenant tous les fichiers source et les fichiers de test. Incluez également un fichier README avec des instructions sur la configuration de l'environnement, la manière d'exécuter l'application et les tests.
 
-**Date Limite de Soumission:** Dernier jour du cours
+**Date Limite de Soumission:** Dernier jour du cours le 23 avril 2024.
 
 Bonne chance et bon codage!
