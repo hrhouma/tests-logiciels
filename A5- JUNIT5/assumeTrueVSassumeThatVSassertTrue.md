@@ -26,3 +26,47 @@ Dans le contexte de la programmation, en particulier dans les tests unitaires, l
 `assertTrue` est la plus stricte parmi ces méthodes. Elle est utilisée pour affirmer qu'une condition doit obligatoirement être vraie pour que le test passe. Si la condition évaluée par `assertTrue` est fausse, le test échoue immédiatement, ce qui n'est pas le cas avec `assumeTrue` et `assumeThat` qui ignorent simplement les tests si les conditions ne sont pas remplies.
 
 Chaque méthode a son utilité et son contexte d'application spécifique. `assertTrue` est essentielle pour valider le comportement attendu d'une unité de code. `assumeTrue` et `assumeThat` sont utiles pour conditionner l'exécution des tests à des prérequis spécifiques, améliorant ainsi l'organisation et la pertinence des suites de tests.
+
+
+### `assumeTrue` n'est pas encore claire ?
+
+Approfondissons `assumeThat` avec un exemple plus concret pour mieux illustrer son utilité et son fonctionnement.
+
+Imaginons que nous développons une application qui doit se comporter différemment selon la version de Java installée. Par exemple, certaines fonctionnalités ne doivent être testées que si la version de Java est supérieure ou égale à 11, car elles utilisent des API qui n'existent pas dans les versions antérieures.
+
+Dans ce cas, `assumeThat` peut être utilisé pour vérifier la version de Java avant d'exécuter le test. Si la version de Java ne satisfait pas la condition spécifiée, le test sera ignoré (pas échoué, juste ignoré). Cela signifie que le test n'est pas pertinent dans ce contexte particulier.
+
+### Exemple
+
+```java
+import static org.junit.Assume.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.junit.Test;
+
+public class NouvellesFonctionnalitesJavaTest {
+
+    @Test
+    public void testNouvelleFonctionnalite() {
+        // Vérifie que la version de Java est au moins 11
+        assumeThat(getJavaVersion(), is(greaterThanOrEqualTo(11)));
+
+        // Code de test pour la nouvelle fonctionnalité qui nécessite Java 11+
+        // Si la version de Java est inférieure à 11, le code ci-dessous ne sera pas exécuté.
+        System.out.println("Ce test s'exécute seulement si Java est en version 11 ou plus.");
+    }
+
+    private int getJavaVersion() {
+        return Integer.parseInt(System.getProperty("java.version").split("\\.")[0]);
+    }
+}
+```
+
+Dans cet exemple, `assumeThat(getJavaVersion(), is(greaterThanOrEqualTo(11)));` vérifie si la version de Java (récupérée et convertie en entier par `getJavaVersion()`) est 11 ou plus. La méthode `greaterThanOrEqualTo(11)` est utilisée pour définir la condition. Si la version de Java est inférieure à 11, le test est ignoré. Si elle est 11 ou supérieure, le test continue et exécute le code de test pour la nouvelle fonctionnalité.
+
+### Avantages de `assumeThat`
+
+- **Flexibilité** : Permet d'écrire des conditions préalables complexes pour décider si un test doit être exécuté.
+- **Pertinence** : Assure que les tests ne sont exécutés que lorsque leur contexte est approprié, évitant ainsi des échecs de test inutiles.
+- **Clarté** : Rend les tests plus lisibles et explicites quant à leurs exigences environnementales ou préalables.
+
+Ainsi, `assumeThat` est un outil puissant pour contrôler l'exécution des tests en fonction de conditions spécifiques, sans pour autant échouer les tests quand les conditions ne sont pas remplies. Cela aide à maintenir la suite de tests propre et focalisée sur les scénarios pertinents.
