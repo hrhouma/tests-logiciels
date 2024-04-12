@@ -17,7 +17,7 @@ Votre première option consiste à reprendre tous les codes dans ma présentatio
 
 # Option 2 : Projet GitHub 
 - Développement de tests unitaires pour une application existante.
-- Suivre les instructions du [Projet GitHub](https://github.com/hrhouma/tests-logiciels/blob/main/A4%20-Projet1%20Tests%20Unitaires/README.md).
+- Suivre les instructions du [Projet GitHub](https://github.com/hrhouma/tests-logiciels/blob/main/A4%20-Projet1%20Tests%20Unitaires/Choix2/README.md).
 
 **Option 3 : Intégration de JUnit 5 dans vos projets actuels**
 - Intégrer JUnit 5 dans l'un de **vos projets de session actuels** pour améliorer la qualité et la fiabilité du code.
