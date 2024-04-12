@@ -33,7 +33,7 @@ https://drive.google.com/drive/folders/1KUU1Xo2NihxGNOSxv9_MFhdQhKesVisv?usp=sha
 1. **Refactoring**: Analysez et refactorisez votre code pour améliorer sa lisibilité, sa maintenabilité et ses performances.
 2. **Gestion des Erreurs**: Implémentez une stratégie de gestion des erreurs plus robuste dans l'application, en utilisant des logs ou des exceptions personnalisées.
 
-**Critères d'Évaluation:**
+# Critères d'Évaluation:
 - **Fonctionnalité (40%)**: L'application doit fonctionner comme spécifié, avec toutes les fonctionnalités implémentées correctement.
 - **Tests Unitaires (30%)**: Les tests doivent couvrir tous les cas d'usage et passer avec succès.
 - **Qualité du Code (20%)**: Le code doit être clair, bien organisé et suivre les bonnes pratiques de programmation Java.
