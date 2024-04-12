@@ -1,0 +1,231 @@
+public class UserDao {
+
+    private Connection connection;
+
+    public UserDao() {
+        connection = DbUtil.getConnection();
+    }
+    
+    public UserDao(Connection conn) {
+        connection = conn;
+    }
+
+    public void addUser(User user) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("insert into users(username,password,full_name,email) values (?, ?, ?, ? )");
+            // Parameters start with 1
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getFullName());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+    }
+
+    public void deleteUser(String username) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("delete from users where username=?");
+            // Parameters start with 1
+            preparedStatement.setString(1, username);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateUser(User user) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("update users set password=?, full_name=?, email=?" +
+                            "where username=?");
+            // Parameters start with 1
+            preparedStatement.setString(1, user.getPassword());
+            preparedStatement.setString(2, user.getFullName());
+            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setString(4, user.getUsername());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<User>();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select * from users");
+            while (rs.next()) {
+                User user = new User();
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setFullName(rs.getString("full_name"));
+                user.setEmail(rs.getString("email"));
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
+    }
+
+    public User getUserByUsername(String username) {
+        User user = new User();
+        try {
+            PreparedStatement preparedStatement = connection.
+                    prepareStatement("select * from users where username=?");
+            preparedStatement.setString(1, username);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setFullName(rs.getString("full_name"));
+                user.setEmail(rs.getString("email"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+}
+
+***********************
+public class User {
+
+	private String username;
+	private String password;
+	private String fullName;
+	private String email;
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", fullName=" + fullName + ", email=" + email
+				+ "]";
+	}
+	
+}
+********************
+CREATE TABLE `users` (
+  `username` varchar(30) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `full_name` varchar(45) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+)
+
+**************
+
+class UserDaoTest {
+     
+    private static UserDao dao;
+     
+    @BeforeAll
+    static void init() {
+        Connection conn = DbUtil.getConnection();
+        try {
+            // set auto commit false so any operation in this test will be discarded.
+            conn.setAutoCommit(false);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        dao = new UserDao(conn);
+    }
+     
+    @AfterAll
+    static void teardown() {
+        Connection conn = DbUtil.getConnection();
+        try {
+            conn.setAutoCommit(true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+     
+    @Test
+    void addUserTest() {
+        User user = new User();
+        user.setUsername("steven");
+        user.setPassword("mypass");
+        user.setFullName("Steven Gerrard");
+        user.setEmail("steven@example.com");
+        dao.addUser(user);
+        User userFromDb = dao.getUserByUsername("steven");
+        assertEquals("mypass", userFromDb.getPassword(), "Password must be equals");
+    }
+     
+    @Test
+    void deleteUserTest() {
+        dao.deleteUser("danielniko");
+        User userFromDb = dao.getUserByUsername("danielniko");
+        assertNull(userFromDb.getUsername(), "Username should be null");
+    }
+     
+    @Test
+    void updateUserTest() {
+        User user = new User();
+        user.setUsername("danielniko");
+        user.setPassword("secret");
+        user.setFullName("Daniel Niko");
+        user.setEmail("danielniko@example.com");
+        dao.addUser(user);
+        user.setPassword("verysecret");
+        dao.updateUser(user);
+        User userFromDb = dao.getUserByUsername("danielniko");
+        assertEquals("verysecret", userFromDb.getPassword(), "Updated password must be equal.");
+    }
+ 
+}
+ 
+ 
+public class App {
+ 
+    public static void main(String[] args) {
+        UserDao dao = new UserDao();
+        // Add new user
+        User user = new User();
+        user.setUsername("luiz");
+        user.setPassword("secret");
+        user.setFullName("Luiz Suarez");
+        user.setEmail("luiz@example.com");
+        // Update user
+        dao.addUser(user);
+        user.setPassword("verysecret");
+        dao.updateUser(user);
+        System.out.println(dao.getAllUsers());
+         
+    }
+     
+}
