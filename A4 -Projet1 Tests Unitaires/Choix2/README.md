@@ -1,15 +1,6 @@
-# lien 1 : 
-https://drive.google.com/drive/folders/1aA2-6lXalJjOdYKY_i9upsWbb3ufT8l4?usp=sharing 
+# Choix 2 - Énoncé du Laboratoire: Gestion des Utilisateurs avec JDBC et JUnit
 
-# lien 2 : 
-https://drive.google.com/drive/folders/1PxIzi3MsCEZ-raf0zEOjSHQn_Fb88ftK?usp=sharing
-
-# lien 3 : 
-https://drive.google.com/drive/folders/1KUU1Xo2NihxGNOSxv9_MFhdQhKesVisv?usp=sharing
-
-# Énoncé du Laboratoire: Gestion des Utilisateurs avec JDBC et JUnit
-
-**Objectif du Laboratoire:** Ce laboratoire vise à renforcer vos compétences en Java, spécifiquement dans la manipulation de bases de données avec JDBC (Java Database Connectivity) et le développement dirigé par les tests (TDD) avec JUnit. Les étudiants seront chargés de développer, tester et améliorer une application de gestion des utilisateurs.
+**Objectif du Laboratoire:** Ce laboratoire vise à renforcer vos compétences en Java, spécifiquement dans la manipulation de bases de données avec JDBC (Java Database Connectivity) les tests unitaires avec JUnit. Les étudiants seront chargés de développer, tester et améliorer une application de gestion des utilisateurs. Le fichier est dans le même dossier choix 2.
 
 **Description du Projet:**
 - Vous allez travailler sur une application Java simple pour la gestion des utilisateurs dans une base de données. 
@@ -45,4 +36,12 @@ Votre projet final doit être soumis sous forme d'archive contenant tous les fic
 **Date Limite de Soumission:** Dernier jour du cours le 23 avril 2024.
 
 Bonne chance et bon codage!
+
+# Références : 
+## lien 1 : 
+https://drive.google.com/drive/folders/1aA2-6lXalJjOdYKY_i9upsWbb3ufT8l4?usp=sharing 
+## lien 2 : 
+https://drive.google.com/drive/folders/1PxIzi3MsCEZ-raf0zEOjSHQn_Fb88ftK?usp=sharing
+## lien 3 : 
+https://drive.google.com/drive/folders/1KUU1Xo2NihxGNOSxv9_MFhdQhKesVisv?usp=sharing
 
