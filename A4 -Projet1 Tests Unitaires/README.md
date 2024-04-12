@@ -1,8 +1,8 @@
-**Projet de Session : Application de JUnit 5**
+# Projet de Session : Application de JUnit 5**
 
 **Objectif :** Approfondir votre maîtrise de JUnit 5 à travers un des trois projets suivants :
 
-**Option 1 : Implémentation de JUnit 5**
+# Option 1 : Implémentation des exemples de la présentation JUNIT5 (fichier dans le dossier choix1):
 - Reprise de ma présentation sur JUnit 5 pour Implémentation tous les exemples de la présentation ou des exemples similaires.
 - Analyse des slides pour identifier et mettre en œuvre divers cas de tests.
 - Rapport format word ou README.md
@@ -15,12 +15,12 @@
   
 Votre première option consiste à reprendre tous les codes dans ma présentation sur JUnit 5 et à implémenter tous ces exemples présentés, ou des exemples similaires, dans votre environnement de développement. Cette tâche comprend une analyse minutieuse des slides pour identifier et mettre en œuvre les divers cas de tests mentionnés, (**Attention:** il y a des bouts de code qui pourraient être référencés indirectement dans les slides suivants. L'objectif est de développer une compréhension approfondie des fonctionnalités de JUnit 5 à travers une application pratique.
 
-**Option 2 : Projet GitHub**
+# Option 2 : Projet GitHub 
 - Développement de tests unitaires pour une application existante.
 - Suivre les instructions du [Projet GitHub](https://github.com/hrhouma/tests-logiciels/blob/main/A4%20-Projet1%20Tests%20Unitaires/README.md).
 
 **Option 3 : Intégration de JUnit 5 dans vos projets actuels**
-- Intégrer JUnit 5 dans l'un de vos projets de session actuels pour améliorer la qualité et la fiabilité du code.
+- Intégrer JUnit 5 dans l'un de **vos projets de session actuels** pour améliorer la qualité et la fiabilité du code.
 
 **Critères d'évaluation :**
 - Qualité et couverture des tests unitaires.
