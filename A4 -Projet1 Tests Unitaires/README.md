@@ -5,7 +5,9 @@
 # Option 1 : Implémentation des exemples de la présentation JUNIT5 (fichier dans le dossier choix1):
 - Reprise de ma présentation sur JUnit 5 pour Implémentation tous les exemples de la présentation ou des exemples similaires.
 - Analyse des slides pour identifier et mettre en œuvre divers cas de tests.
-- Rapport format word ou README.md
+## Livrables :
+- Me fournir un dépôt Github avec tous les exemples de la présentation ci-jointe dans le même dossier (implémentés) + commentaires.
+- Ou me fournir un rapport word avec les fichiers.
 
 
 **Critères d'évaluation :**
